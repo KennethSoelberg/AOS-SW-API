@@ -6,6 +6,7 @@ from aos_sw_api.auth import Auth
 from aos_sw_api.authentication import Authentication
 from aos_sw_api.dot1x import Dot1x
 from aos_sw_api.ip_address_subnet import IpAddressSubnet
+from aos_sw_api.mac_authentication import MacAuthentication
 from aos_sw_api.port import Port
 from aos_sw_api.radius_server import RadiusServer
 from aos_sw_api.sntp import Sntp
@@ -57,6 +58,7 @@ class BaseClient:
         self.ip_address_subnet = IpAddressSubnet(session=self._session)
         self.authentication = Authentication(session=self._session)
         self.dot1x = Dot1x(session=self._session)
+        self.mac_authentication = MacAuthentication(session=self._session)
 
 
 class Client(BaseClient):
