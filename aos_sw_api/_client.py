@@ -3,6 +3,7 @@ from typing import Union
 import httpx
 
 from aos_sw_api.auth import Auth
+from aos_sw_api.port import Port
 from aos_sw_api.system import System
 
 
@@ -39,6 +40,7 @@ class BaseClient:
 
         self.auth = Auth(session=self._session, username=username, password=password)
         self.system = System(session=self._session)
+        self.port = Port(session=self._session)
 
 
 class Client(BaseClient):
