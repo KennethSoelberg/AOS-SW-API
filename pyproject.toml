@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "AOS-SW-API"
-version = "0.1.0"
+version = "0.1.1"
 description = "ArubaOS Switch REST API"
 
 authors = ["Kenneth Sølberg <solberg.kenneths94@gmail.com>"]
