@@ -2,7 +2,7 @@ from typing import Union, List
 
 import httpx
 
-from aos_sw_api import IpAddress
+from aos_sw_api._ip_address import IpAddress
 from aos_sw_api.enums import DeviceOperationModeEnum, TimeServerProtocolEnum
 from aos_sw_api.globel_models import IpAddressModel, NetworkHostModel
 from aos_sw_api.validate import validate_200
