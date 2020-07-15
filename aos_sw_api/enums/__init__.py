@@ -1,4 +1,5 @@
 from .device_operation_mode import DeviceOperationModeEnum
+from .ip_address_assignment_method import IpAddressAssignmentMethodEnum
 from .ip_address_version import IpAddressVersionEnum
 from .lacp_status import LacpStatusEnum
 from .mac_address_version import MacAddressVersionEnum
