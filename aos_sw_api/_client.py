@@ -8,6 +8,8 @@ from aos_sw_api.radius_server import RadiusServer
 from aos_sw_api.sntp import Sntp
 from aos_sw_api.sntp_server_details import SntpServerDetails
 from aos_sw_api.system import System
+from aos_sw_api.vlan import Vlan
+from aos_sw_api.vlan_port import VlanPort
 
 
 class BaseClient:
@@ -47,6 +49,8 @@ class BaseClient:
         self.radius_server = RadiusServer(session=self._session)
         self.sntp = Sntp(session=self._session)
         self.sntp_server_details = SntpServerDetails(session=self._session)
+        self.vlan_port = VlanPort(session=self._session)
+        self.vlan = Vlan(session=self._session)
 
 
 class Client(BaseClient):
