@@ -4,6 +4,8 @@ import httpx
 
 from aos_sw_api.auth import Auth
 from aos_sw_api.port import Port
+from aos_sw_api.radius_server import RadiusServer
+from aos_sw_api.sntp import Sntp
 from aos_sw_api.system import System
 
 
@@ -41,6 +43,8 @@ class BaseClient:
         self.auth = Auth(session=self._session, username=username, password=password)
         self.system = System(session=self._session)
         self.port = Port(session=self._session)
+        self.radius_server = RadiusServer(session=self._session)
+        self.sntp = Sntp(session=self._session)
 
 
 class Client(BaseClient):

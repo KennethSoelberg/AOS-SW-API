@@ -4,4 +4,6 @@ from .lacp_status import LacpStatusEnum
 from .mac_address_version import MacAddressVersionEnum
 from .port_config_mode import PortConfigModeEnum
 from .port_trunk_type import PortTrunkTypeEnum
+from .sntp_client_operation_mode import SntpClientOperationModeEnum
 from .time_server_protocol import TimeServerProtocolEnum
+from .time_window_type import TimeWindowTypeEnum

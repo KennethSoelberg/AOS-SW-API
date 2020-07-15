@@ -1,0 +1,1 @@
+from ._sntp import Sntp

@@ -1,0 +1,6 @@
+from enum import Enum
+
+
+class TimeWindowTypeEnum(str, Enum):
+    TW_POSITIVE_TIME_WINDOW = "TW_POSITIVE_TIME_WINDOW"
+    TW_PLUS_OR_MINUS_TIME_WINDOW = "TW_PLUS_OR_MINUS_TIME_WINDOW"
