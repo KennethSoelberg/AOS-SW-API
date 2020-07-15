@@ -11,3 +11,5 @@ from .time_server_protocol import TimeServerProtocolEnum
 from .time_window_type import TimeWindowTypeEnum
 from .vlan_status import VlanStatusEnum
 from .vlan_type import VlanTypeEnum
+from .primary_auth_method import PrimaryAuthMethodEnum
+from .secondary_auth_method import SecondaryAuthMethodEnum

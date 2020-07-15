@@ -1,8 +1,10 @@
+from pprint import pprint
+
 import pytest
 
 
 def test_get_all_radius_servers(client):
-    client.radius_server.get_all_radius_servers()
+    pprint(client.radius_server.get_all_radius_servers().radius_server_element[0].dict())
 
 
 def test_get_one_radius_server(client):

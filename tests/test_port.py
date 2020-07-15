@@ -1,8 +1,10 @@
+from pprint import pprint
+
 import pytest
 
 
 def test_get_ports_client(client):
-    client.port.get_all_ports()
+    pprint(client.port.get_all_ports().port_element[0].dict())
 
 
 def test_get_one_port_client(client):

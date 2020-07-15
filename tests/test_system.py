@@ -5,7 +5,7 @@ from aos_sw_api.enums import IpAddressVersionEnum, TimeServerProtocolEnum
 
 
 def test_get_system_client(client):
-    client.system.get_system()
+    print(client.system.get_system())
 
 
 def test_update_system_client(client):

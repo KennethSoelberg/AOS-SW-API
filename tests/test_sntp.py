@@ -2,7 +2,7 @@ import pytest
 
 
 def test_get_sntp(client):
-    client.sntp.get_sntp()
+    print(client.sntp.get_sntp())
 
 
 @pytest.mark.asyncio

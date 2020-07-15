@@ -3,6 +3,7 @@ from typing import Union
 import httpx
 
 from aos_sw_api.auth import Auth
+from aos_sw_api.authentication import Authentication
 from aos_sw_api.ip_address_subnet import IpAddressSubnet
 from aos_sw_api.port import Port
 from aos_sw_api.radius_server import RadiusServer
@@ -53,6 +54,7 @@ class BaseClient:
         self.vlan_port = VlanPort(session=self._session)
         self.vlan = Vlan(session=self._session)
         self.ip_address_subnet = IpAddressSubnet(session=self._session)
+        self.authentication = Authentication(session=self._session)
 
 
 class Client(BaseClient):
