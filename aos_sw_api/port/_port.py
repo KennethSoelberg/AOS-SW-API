@@ -2,7 +2,7 @@ from typing import Union
 
 import httpx
 
-from aos_sw_api._validate import validate_200
+from aos_sw_api.validate import validate_200
 from aos_sw_api.enums import PortConfigModeEnum, LacpStatusEnum
 from ._model import PortElementList, PortElement, PortStatisticsList, PortStatistics
 

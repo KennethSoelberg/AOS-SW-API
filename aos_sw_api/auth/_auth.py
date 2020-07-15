@@ -2,7 +2,7 @@ from typing import Union
 
 import httpx
 
-from aos_sw_api._validate import validate_201, validate_204
+from aos_sw_api.validate import validate_201, validate_204
 
 
 class Auth:
