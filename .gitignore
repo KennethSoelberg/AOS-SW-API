@@ -9,6 +9,8 @@ __pycache__/
 #pycharm
 .idea
 
+discover
+
 # Distribution / packaging
 .Python
 build/

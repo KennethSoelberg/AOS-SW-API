@@ -3,6 +3,7 @@ from typing import Union
 import httpx
 
 from aos_sw_api.auth import Auth
+from aos_sw_api.system import System
 
 
 class BaseClient:
@@ -15,16 +16,18 @@ class BaseClient:
                  password: str,
                  https: bool,
                  auto_logout: bool,
+                 cookie: Union[str, None],
                  cert_path: Union[str, bool]):
+
+        self._auto_logout = auto_logout
+        self.cookie = cookie
 
         if https:
             base_url = f"https://{switch_ip}/rest/v{api_version}/"
         else:
             base_url = f"http://{switch_ip}/rest/v{api_version}/"
-
-        self._auto_logout = auto_logout
-
         client_settings = dict(base_url=base_url, verify=cert_path)
+
         if sync:
             self._session = httpx.Client(**client_settings)
         else:
@@ -35,6 +38,7 @@ class BaseClient:
         self._session.headers["Connection"] = "close"
 
         self.auth = Auth(session=self._session, username=username, password=password)
+        self.system = System(session=self._session)
 
 
 class Client(BaseClient):
@@ -46,6 +50,7 @@ class Client(BaseClient):
                  password: str,
                  https: bool = True,
                  auto_logout: bool = True,
+                 cookie: str = None,
                  cert_path: Union[str, bool] = False):
         super().__init__(switch_ip=switch_ip,
                          api_version=api_version,
@@ -54,10 +59,11 @@ class Client(BaseClient):
                          password=password,
                          https=https,
                          auto_logout=auto_logout,
+                         cookie=cookie,
                          cert_path=cert_path)
 
     def __enter__(self):
-        self.auth.login()
+        self.auth.login(cookie=self.cookie)
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
@@ -80,6 +86,7 @@ class AsyncClient(BaseClient):
                  password: str,
                  https: bool = True,
                  auto_logout: bool = True,
+                 cookie: str = None,
                  cert_path: Union[str, bool] = False):
         super().__init__(switch_ip=switch_ip,
                          api_version=api_version,
@@ -88,10 +95,11 @@ class AsyncClient(BaseClient):
                          password=password,
                          https=https,
                          auto_logout=auto_logout,
+                         cookie=cookie,
                          cert_path=cert_path)
 
     async def __aenter__(self):
-        await self.auth.login()
+        await self.auth.login(cookie=self.cookie)
         return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):

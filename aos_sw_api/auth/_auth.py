@@ -27,10 +27,13 @@ class AuthSync(BaseAuth):
     def __init__(self, session: httpx.Client, username: str, password: str):
         super().__init__(session=session, username=username, password=password)
 
-    def login(self) -> None:
-        r = self._session.post(url=self._auth_base_url, json=self._user_data)
-        validate_201(r)
-        self._session.headers["cookie"] = r.json()['cookie']
+    def login(self, cookie: Union[str, None]) -> None:
+        if cookie is not None:
+            self._session.headers["cookie"] = cookie
+        else:
+            r = self._session.post(url=self._auth_base_url, json=self._user_data)
+            validate_201(r)
+            self._session.headers["cookie"] = r.json()['cookie']
 
     def logout(self) -> None:
         r = self._session.delete(self._auth_base_url)
@@ -42,10 +45,13 @@ class AuthAsync(BaseAuth):
     def __init__(self, session: httpx.AsyncClient, username: str, password: str):
         super().__init__(session=session, username=username, password=password)
 
-    async def login(self) -> None:
-        r = await self._session.post(url=self._auth_base_url, json=self._user_data)
-        validate_201(r)
-        self._session.headers["cookie"] = r.json()['cookie']
+    async def login(self, cookie: Union[str, None]) -> None:
+        if cookie is not None:
+            self._session.headers["cookie"] = cookie
+        else:
+            r = await self._session.post(url=self._auth_base_url, json=self._user_data)
+            validate_201(r)
+            self._session.headers["cookie"] = r.json()['cookie']
 
     async def logout(self) -> None:
         r = await self._session.delete(self._auth_base_url)
