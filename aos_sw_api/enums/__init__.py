@@ -7,6 +7,9 @@ from .lacp_status import LacpStatusEnum
 from .mac_address_version import MacAddressVersionEnum
 from .port_config_mode import PortConfigModeEnum
 from .port_mode import PortModeEnum
+from .port_poe_allocation_method import PortPoeAllocationMethodEnum
+from .port_poe_detection_status import PortPoeDetectionStatusEnum
+from .port_poe_priority import PortPoePriorityEnum
 from .port_trunk_type import PortTrunkTypeEnum
 from .primary_auth_method import PrimaryAuthMethodEnum
 from .secondary_auth_method import SecondaryAuthMethodEnum
