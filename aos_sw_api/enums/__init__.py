@@ -13,8 +13,12 @@ from .port_poe_priority import PortPoePriorityEnum
 from .port_trunk_type import PortTrunkTypeEnum
 from .primary_auth_method import PrimaryAuthMethodEnum
 from .secondary_auth_method import SecondaryAuthMethodEnum
+from .snmp_auth_trap_mode import SnmpAuthTrapModeEnum
+from .snmp_trap_level import SnmpTrapLevelEnum
+from .snmp_trap_mode import SnmpTrapModeEnum
 from .sntp_client_operation_mode import SntpClientOperationModeEnum
 from .time_server_protocol import TimeServerProtocolEnum
 from .time_window_type import TimeWindowTypeEnum
+from .user_type import UserTypeEnum
 from .vlan_status import VlanStatusEnum
 from .vlan_type import VlanTypeEnum
