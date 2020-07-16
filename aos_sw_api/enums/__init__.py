@@ -16,6 +16,9 @@ from .secondary_auth_method import SecondaryAuthMethodEnum
 from .snmp_auth_trap_mode import SnmpAuthTrapModeEnum
 from .snmp_trap_level import SnmpTrapLevelEnum
 from .snmp_trap_mode import SnmpTrapModeEnum
+from .snmpv3_authentication_privacy_protocol import Snmpv3AuthenticationPrivacyProtocolEnum
+from .snmpv3_authentication_protocol import Snmpv3AuthenticationProtocolEnum
+from .snmpv3_group_type import Snmpv3GroupTypeEnum
 from .sntp_client_operation_mode import SntpClientOperationModeEnum
 from .time_server_protocol import TimeServerProtocolEnum
 from .time_window_type import TimeWindowTypeEnum

@@ -11,6 +11,7 @@ from aos_sw_api.poe import Poe
 from aos_sw_api.port import Port
 from aos_sw_api.radius_server import RadiusServer
 from aos_sw_api.snmp_server import SnmpServer
+from aos_sw_api.snmpv3 import SnmpV3
 from aos_sw_api.sntp import Sntp
 from aos_sw_api.sntp_server_details import SntpServerDetails
 from aos_sw_api.system import System
@@ -63,6 +64,7 @@ class BaseClient:
         self.mac_authentication = MacAuthentication(session=self._session)
         self.poe = Poe(session=self._session)
         self.snmp_server = SnmpServer(session=self._session)
+        self.snmpv3 = SnmpV3(session=self._session)
 
 
 class Client(BaseClient):
