@@ -3,6 +3,7 @@ from typing import List
 from pydantic import BaseModel, Field
 
 from aos_sw_api.enums import PortConfigModeEnum, PortTrunkTypeEnum, LacpStatusEnum
+from aos_sw_api.globel_models import CollectionResult
 
 
 class PortStatistics(BaseModel):
@@ -21,6 +22,7 @@ class PortStatistics(BaseModel):
 
 
 class PortStatisticsList(BaseModel):
+    collection_result: CollectionResult
     port_statistics_element: List[PortStatistics]
 
 
@@ -48,4 +50,5 @@ class SetPortElement(BaseModel):
 
 
 class PortElementList(BaseModel):
+    collection_result: CollectionResult
     port_element: List[PortElement]

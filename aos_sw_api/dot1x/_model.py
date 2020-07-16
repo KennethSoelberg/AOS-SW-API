@@ -3,6 +3,7 @@ from typing import List
 from pydantic import BaseModel, Field
 
 from aos_sw_api.enums import Dot1xAuthenticatorPortControlEnum, Dot1xControlledDirectionEnum
+from aos_sw_api.globel_models import CollectionResult
 
 
 class Dot1xModel(BaseModel):
@@ -39,8 +40,10 @@ class Dot1xPortSecurity(BaseModel):
 
 
 class Dot1xAuthenticatorPortList(BaseModel):
+    collection_result: CollectionResult
     dot1x_authenticator_port_element: List[Dot1xAuthenticatorPort]
 
 
 class Dot1xPortSecurityList(BaseModel):
+    collection_result: CollectionResult
     dot1x_port_security_element: List[Dot1xPortSecurity]

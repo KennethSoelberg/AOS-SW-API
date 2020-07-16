@@ -3,6 +3,7 @@ from typing import List
 from pydantic import BaseModel, Field
 
 from aos_sw_api.enums import PortModeEnum
+from aos_sw_api.globel_models import CollectionResult
 
 
 class VlanPortModel(BaseModel):
@@ -12,4 +13,5 @@ class VlanPortModel(BaseModel):
 
 
 class VlanPortList(BaseModel):
+    collection_result: CollectionResult
     vlan_port_element: List[VlanPortModel]

@@ -3,6 +3,7 @@ from typing import List
 from pydantic import BaseModel, Field
 
 from aos_sw_api.enums import PortPoePriorityEnum, PortPoeAllocationMethodEnum, PortPoeDetectionStatusEnum
+from aos_sw_api.globel_models import CollectionResult
 
 
 class PortPoe(BaseModel):
@@ -28,8 +29,10 @@ class PortPoeStats(BaseModel):
 
 
 class PortPoeList(BaseModel):
+    collection_result: CollectionResult
     port_poe: List[PortPoe]
 
 
 class PortPoeStatsList(BaseModel):
+    collection_result: CollectionResult
     port_poe_stats: List[PortPoeStats]

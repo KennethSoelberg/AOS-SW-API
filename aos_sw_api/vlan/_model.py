@@ -3,6 +3,7 @@ from typing import List
 from pydantic import BaseModel, Field
 
 from aos_sw_api.enums import VlanStatusEnum, VlanTypeEnum
+from aos_sw_api.globel_models import CollectionResult
 
 
 class VlanModel(BaseModel):
@@ -18,4 +19,5 @@ class VlanModel(BaseModel):
 
 
 class VlanList(BaseModel):
+    collection_result: CollectionResult
     vlan_element: List[VlanModel]

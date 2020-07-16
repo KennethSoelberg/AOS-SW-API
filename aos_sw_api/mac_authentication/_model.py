@@ -2,6 +2,8 @@ from typing import List
 
 from pydantic import BaseModel, Field
 
+from aos_sw_api.globel_models import CollectionResult
+
 
 class MacAuthenticationModel(BaseModel):
     unauthorized_vlan_id: int = Field(..., ge=0, le=4094)
@@ -16,4 +18,5 @@ class MacAuthenticationPort(BaseModel):
 
 
 class MacAuthenticationPortList(BaseModel):
+    collection_result: CollectionResult
     mac_authentication_port_element: List[MacAuthenticationPort]

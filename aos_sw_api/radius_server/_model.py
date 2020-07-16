@@ -3,7 +3,7 @@ from typing import List
 from pydantic import BaseModel, Field
 
 from aos_sw_api.enums import TimeWindowTypeEnum
-from aos_sw_api.globel_models import IpAddressModel
+from aos_sw_api.globel_models import IpAddressModel, CollectionResult
 
 
 class RadiusServerModel(BaseModel):
@@ -20,4 +20,5 @@ class RadiusServerModel(BaseModel):
 
 
 class RadiusServerList(BaseModel):
+    collection_result: CollectionResult
     radius_server_element: List[RadiusServerModel]

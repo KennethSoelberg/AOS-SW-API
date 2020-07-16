@@ -2,7 +2,7 @@ from typing import List
 
 from pydantic import BaseModel, Field
 
-from aos_sw_api.globel_models import IpAddressModel
+from aos_sw_api.globel_models import IpAddressModel, CollectionResult
 
 
 class SntpServerDetailsModel(BaseModel):
@@ -13,4 +13,5 @@ class SntpServerDetailsModel(BaseModel):
 
 
 class SntpServerDetailsList(BaseModel):
+    collection_result: CollectionResult
     sntp_servers: List[SntpServerDetailsModel]

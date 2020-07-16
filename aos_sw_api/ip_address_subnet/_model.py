@@ -3,7 +3,7 @@ from typing import List
 from pydantic import BaseModel, Field
 
 from aos_sw_api.enums import IpAddressAssignmentMethodEnum
-from aos_sw_api.globel_models import IpAddressModel
+from aos_sw_api.globel_models import IpAddressModel, CollectionResult
 
 
 class IpAddressSubnetModel(BaseModel):
@@ -14,4 +14,5 @@ class IpAddressSubnetModel(BaseModel):
 
 
 class IpAddressSubnetList(BaseModel):
+    collection_result: CollectionResult
     ip_address_subnet_element: List[IpAddressSubnetModel]
