@@ -20,6 +20,7 @@ from .snmpv3_authentication_privacy_protocol import Snmpv3AuthenticationPrivacyP
 from .snmpv3_authentication_protocol import Snmpv3AuthenticationProtocolEnum
 from .snmpv3_group_type import Snmpv3GroupTypeEnum
 from .sntp_client_operation_mode import SntpClientOperationModeEnum
+from .spanning_tree_mode import SpanningTreeModeEnum
 from .time_server_protocol import TimeServerProtocolEnum
 from .time_window_type import TimeWindowTypeEnum
 from .user_type import UserTypeEnum
