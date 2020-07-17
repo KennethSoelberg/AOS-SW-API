@@ -4,6 +4,7 @@ import httpx
 
 from aos_sw_api.auth import Auth
 from aos_sw_api.authentication import Authentication
+from aos_sw_api.cmd import CliCommand
 from aos_sw_api.dot1x import Dot1x
 from aos_sw_api.ip_address_subnet import IpAddressSubnet
 from aos_sw_api.mac_authentication import MacAuthentication
@@ -75,6 +76,7 @@ class BaseClient:
         self.vlan_port = VlanPort(session=self._session)
         self.transceivers = Transceiver(session=self._session)
         self.mac_table = MacTable(session=self._session)
+        self.cmd = CliCommand(session=self._session)
 
 
 class Client(BaseClient):

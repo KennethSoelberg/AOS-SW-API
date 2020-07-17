@@ -1,3 +1,4 @@
+from .cli_cmd_status import CliCmdStatusEnum
 from .device_operation_mode import DeviceOperationModeEnum
 from .dot1x_authenticator_port_control import Dot1xAuthenticatorPortControlEnum
 from .dot1x_controlled_direction import Dot1xControlledDirectionEnum
