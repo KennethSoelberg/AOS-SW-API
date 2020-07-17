@@ -17,6 +17,7 @@ from aos_sw_api.sntp_server_details import SntpServerDetails
 from aos_sw_api.stp import SpanningTree
 from aos_sw_api.syslog import Syslog
 from aos_sw_api.system import System
+from aos_sw_api.tacacs_profile import TacacsProfile
 from aos_sw_api.vlan import Vlan
 from aos_sw_api.vlan_port import VlanPort
 
@@ -53,22 +54,23 @@ class BaseClient:
         self._session.headers["Connection"] = "close"
 
         self.auth = Auth(session=self._session, username=username, password=password)
-        self.system = System(session=self._session)
-        self.port = Port(session=self._session)
-        self.radius_server = RadiusServer(session=self._session)
-        self.sntp = Sntp(session=self._session)
-        self.sntp_server_details = SntpServerDetails(session=self._session)
-        self.vlan_port = VlanPort(session=self._session)
-        self.vlan = Vlan(session=self._session)
-        self.ip_address_subnet = IpAddressSubnet(session=self._session)
         self.authentication = Authentication(session=self._session)
         self.dot1x = Dot1x(session=self._session)
+        self.ip_address_subnet = IpAddressSubnet(session=self._session)
         self.mac_authentication = MacAuthentication(session=self._session)
         self.poe = Poe(session=self._session)
+        self.port = Port(session=self._session)
+        self.radius_server = RadiusServer(session=self._session)
         self.snmp_server = SnmpServer(session=self._session)
         self.snmpv3 = SnmpV3(session=self._session)
+        self.sntp = Sntp(session=self._session)
+        self.sntp_server_details = SntpServerDetails(session=self._session)
         self.stp = SpanningTree(session=self._session)
         self.syslog = Syslog(session=self._session)
+        self.system = System(session=self._session)
+        self.tacacs_profile = TacacsProfile(session=self._session)
+        self.vlan = Vlan(session=self._session)
+        self.vlan_port = VlanPort(session=self._session)
 
 
 class Client(BaseClient):
