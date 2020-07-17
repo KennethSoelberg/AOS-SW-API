@@ -4,7 +4,11 @@ from .dot1x_controlled_direction import Dot1xControlledDirectionEnum
 from .ip_address_assignment_method import IpAddressAssignmentMethodEnum
 from .ip_address_version import IpAddressVersionEnum
 from .lacp_status import LacpStatusEnum
+from .logging_facility_type import LoggingFacilityTypeEnum
+from .logging_severity_type import LoggingSeverityTypeEnum
+from .logging_system_module_type import LoggingSystemModuleTypeEnum
 from .mac_address_version import MacAddressVersionEnum
+from .origin_id import OriginIdEnum
 from .port_config_mode import PortConfigModeEnum
 from .port_mode import PortModeEnum
 from .port_poe_allocation_method import PortPoeAllocationMethodEnum
@@ -23,6 +27,7 @@ from .sntp_client_operation_mode import SntpClientOperationModeEnum
 from .spanning_tree_mode import SpanningTreeModeEnum
 from .time_server_protocol import TimeServerProtocolEnum
 from .time_window_type import TimeWindowTypeEnum
+from .transport_protocol import TransportProtocolEnum
 from .user_type import UserTypeEnum
 from .vlan_status import VlanStatusEnum
 from .vlan_type import VlanTypeEnum
