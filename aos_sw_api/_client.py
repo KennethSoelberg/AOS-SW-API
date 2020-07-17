@@ -7,6 +7,7 @@ from aos_sw_api.authentication import Authentication
 from aos_sw_api.dot1x import Dot1x
 from aos_sw_api.ip_address_subnet import IpAddressSubnet
 from aos_sw_api.mac_authentication import MacAuthentication
+from aos_sw_api.mac_table import MacTable
 from aos_sw_api.poe import Poe
 from aos_sw_api.port import Port
 from aos_sw_api.radius_server import RadiusServer
@@ -73,6 +74,7 @@ class BaseClient:
         self.vlan = Vlan(session=self._session)
         self.vlan_port = VlanPort(session=self._session)
         self.transceivers = Transceiver(session=self._session)
+        self.mac_table = MacTable(session=self._session)
 
 
 class Client(BaseClient):
