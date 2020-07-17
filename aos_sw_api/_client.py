@@ -18,6 +18,7 @@ from aos_sw_api.stp import SpanningTree
 from aos_sw_api.syslog import Syslog
 from aos_sw_api.system import System
 from aos_sw_api.tacacs_profile import TacacsProfile
+from aos_sw_api.transceivers import Transceiver
 from aos_sw_api.vlan import Vlan
 from aos_sw_api.vlan_port import VlanPort
 
@@ -71,6 +72,7 @@ class BaseClient:
         self.tacacs_profile = TacacsProfile(session=self._session)
         self.vlan = Vlan(session=self._session)
         self.vlan_port = VlanPort(session=self._session)
+        self.transceivers = Transceiver(session=self._session)
 
 
 class Client(BaseClient):
